@@ -31,7 +31,6 @@ public class PermissionManager {
     /**
      * Set a list of users who are allowed to use the command
      * @param userIds list of user ids
-     * @return this
      */
 
     public PermissionManager limitToUsers(String... userIds){
@@ -43,7 +42,6 @@ public class PermissionManager {
     /**
      * Set a list of users who are allowed to use the command
      * @param users list of users
-     * @return this
      */
 
     public PermissionManager limitToUsers(User... users){
@@ -54,7 +52,6 @@ public class PermissionManager {
     /**
      * Adds required permissions the bot must have
      * @param requiredBotPerms required permissions
-     * @return this
      */
 
     public PermissionManager addRequiredBotPerms(Permission... requiredBotPerms) {
@@ -64,7 +61,6 @@ public class PermissionManager {
     /**
      * Adds required permissions the bot must have
      * @param requiredBotPerms required permissions
-     * @return this
      */
 
     public PermissionManager addRequiredBotPerms(Collection<Permission> requiredBotPerms) {
@@ -75,7 +71,6 @@ public class PermissionManager {
     /**
      * Adds required permissions the executor must have
      * @param requiredUserPerms required permissions
-     * @return this
      */
 
     public PermissionManager addRequiredUserPerms(Permission... requiredUserPerms) {
@@ -85,7 +80,6 @@ public class PermissionManager {
     /**
      * Adds required permissions the executor must have
      * @param requiredUserPerms required permissions
-     * @return this
      */
 
     public PermissionManager addRequiredUserPerms(Collection<Permission> requiredUserPerms) {

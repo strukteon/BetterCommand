@@ -69,7 +69,6 @@ public class BetterCommand {
     /**
      * Tell the instance to use the provided shardmanager
      * @param manager shard manager
-     * @return this
      */
 
     public BetterCommand useShardManager(@Nonnull ShardManager manager){
@@ -81,7 +80,6 @@ public class BetterCommand {
     /**
      * Tell the instance to use the provided jda
      * @param jda jda
-     * @return this
      */
 
     public BetterCommand useJDA(@Nonnull JDA jda){
@@ -94,7 +92,6 @@ public class BetterCommand {
      * Enable the default help message
      * @param label command label of the help message
      * @param aliases aliases of the help command
-     * @return this
      */
 
     public BetterCommand useDefaultHelpMessage(@Nonnull String label, @Nonnull String... aliases){
@@ -108,7 +105,6 @@ public class BetterCommand {
      * @param label command label of the help message
      * @param color color of the embed message
      * @param aliases aliases of the help command
-     * @return this
      */
 
     public BetterCommand useDefaultHelpMessage(@Nonnull String label, @Nonnull Color color, @Nonnull String... aliases){
@@ -120,7 +116,6 @@ public class BetterCommand {
     /**
      * Set command label case ignoring
      * @param ignoreCase ignore case
-     * @return this
      */
 
     public BetterCommand setIgnoreCase(boolean ignoreCase){
@@ -132,7 +127,6 @@ public class BetterCommand {
     /**
      * Delete the user message after a successful execute
      * @param deleteUserMsg delete the user message
-     * @return this
      */
 
     public BetterCommand setDeleteUserMessage(boolean deleteUserMsg) {
@@ -144,7 +138,6 @@ public class BetterCommand {
     /**
      * Add command section to the commands
      * @param commandSection command section
-     * @return this
      */
 
     public BetterCommand addCommandSection(CommandSection commandSection){
@@ -157,7 +150,6 @@ public class BetterCommand {
      * Add command section to the commands
      * @param sectionName name of the section
      * @param commands commands
-     * @return this
      */
 
     public BetterCommand addCommandSection(String sectionName, BaseCommand... commands){
@@ -169,7 +161,6 @@ public class BetterCommand {
      * Add command section to the commands
      * @param sectionName name of the section
      * @param commands commands
-     * @return this
      */
 
     public BetterCommand addCommandSection(String sectionName, Collection<BaseCommand> commands){
@@ -180,7 +171,6 @@ public class BetterCommand {
     /**
      * Set a global command cooldown
      * @param millis time in milliseconds
-     * @return this
      */
 
     public BetterCommand setCooldown(long millis){
@@ -192,7 +182,6 @@ public class BetterCommand {
     /**
      * Set this instances prefix loader
      * @param prefixLoader prefix loader
-     * @return this
      */
 
     public BetterCommand setPrefixLoader(Loader.Prefix prefixLoader) {
@@ -204,7 +193,6 @@ public class BetterCommand {
     /**
      * Set this instances blacklisted loader
      * @param blacklistedLoader blacklisted loader
-     * @return this
      */
 
     public BetterCommand setBlacklistedLoader(Loader.Blacklisted blacklistedLoader) {
@@ -216,7 +204,6 @@ public class BetterCommand {
     /**
      * Set this instances error handler
      * @param errorHandler error handler
-     * @return this
      */
 
     public BetterCommand setErrorHandler(ErrorHandler errorHandler) {
@@ -227,7 +214,6 @@ public class BetterCommand {
 
     /**
      * Enable this instance
-     * @return this
      */
 
     public BetterCommand enable(){
@@ -246,7 +232,6 @@ public class BetterCommand {
 
     /**
      * Disable this instance
-     * @return this
      */
 
     public BetterCommand disable(){
@@ -273,7 +258,6 @@ public class BetterCommand {
 
     /**
      * Returns the global command cooldown (-1 if disabled)
-     * @return this
      */
 
     protected long getCooldown() {

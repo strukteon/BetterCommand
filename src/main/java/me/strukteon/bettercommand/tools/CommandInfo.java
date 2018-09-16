@@ -39,7 +39,6 @@ public class CommandInfo {
     /**
      * Set a cooldown for this instance
      * @param cooldown cooldown in milliseconds
-     * @return this
      */
 
     public CommandInfo setCooldown(long cooldown) {
@@ -51,7 +50,6 @@ public class CommandInfo {
     /**
      * Set a decription for this CommandInfo
      * @param help message
-     * @return this
      */
 
     public CommandInfo setHelp(String help) {
@@ -63,7 +61,6 @@ public class CommandInfo {
     /**
      * Set aliases for the command to listen for
      * @param aliases aliases
-     * @return this
      */
 
     public CommandInfo setAliases(List<String> aliases) {
@@ -75,7 +72,6 @@ public class CommandInfo {
     /**
      * Set aliases for the command to listen for
      * @param aliases aliases
-     * @return this
      */
 
     public CommandInfo setAliases(String... aliases) {
@@ -87,7 +83,6 @@ public class CommandInfo {
     /**
      * Set a {@link SyntaxBuilder} for this {@link CommandInfo}
      * @param syntaxBuilder {@link SyntaxBuilder}
-     * @return this
      */
 
     public CommandInfo setSyntaxBuilder(SyntaxBuilder syntaxBuilder) {
@@ -99,7 +94,6 @@ public class CommandInfo {
     /**
      * Set a custom syntax message for this {@link CommandInfo}
      * @param syntax message
-     * @return this
      */
 
     public CommandInfo setSyntax(String syntax) {
@@ -111,7 +105,6 @@ public class CommandInfo {
     /**
      * Enable this command only in NSFW channels
      * @param nsfwOnly only allowed in nsfw channels
-     * @return this
      */
 
     public CommandInfo setNsfwOnly(boolean nsfwOnly) {
