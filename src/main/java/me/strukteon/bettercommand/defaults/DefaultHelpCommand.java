@@ -1,12 +1,13 @@
 package me.strukteon.bettercommand.defaults;
 /*
     Created by nils on 08.08.2018 at 19:16.
-    
+
     (c) nils 2018
 */
 
 import me.strukteon.bettercommand.CommandEvent;
 import me.strukteon.bettercommand.CommandSection;
+import me.strukteon.bettercommand.tools.EmbedProducer;
 import me.strukteon.bettercommand.utils.CommandTools;
 import me.strukteon.bettercommand.command.BaseCommand;
 import me.strukteon.bettercommand.tools.CommandInfo;
@@ -27,21 +28,33 @@ import java.awt.*;
 public class DefaultHelpCommand implements ExtendedCommand {
     private String label;
     private String[] aliases;
-    private Color color;
+    private EmbedBuilder builder;
+    private EmbedProducer builderProducer;
 
-    public DefaultHelpCommand(@Nonnull String label, @Nonnull String[] aliases){
+    public DefaultHelpCommand(@Nonnull String label, @Nonnull String[] aliases) {
         this(label, Color.decode("#7289DA"), aliases);
     }
 
-    public DefaultHelpCommand(@Nonnull String label, @Nonnull Color color, @Nonnull String[] aliases){
-        this.label = label;
-        this.aliases = aliases;
-        this.color = color;
+    public DefaultHelpCommand(@Nonnull String label, @Nonnull Color color, @Nonnull String[] aliases) {
+        this(label, (new EmbedBuilder()).setColor(color), aliases);
     }
 
-    @Override
+    public DefaultHelpCommand(@Nonnull String label, EmbedBuilder builder, @Nonnull String[] aliases) {
+        this.label = label;
+        this.aliases = aliases;
+        this.builder = builder;
+    }
+
+    public DefaultHelpCommand(@Nonnull String label, @Nonnull EmbedProducer builderProducer, @Nonnull String[] aliases) {
+        this(label, (EmbedBuilder)null, aliases);
+        this.builderProducer = builderProducer;
+    }
+
     public void onExecute(CommandEvent event, Syntax syntax, User author, MessageChannel channel) {
-        EmbedBuilder builder = new EmbedBuilder().setColor(color);
+        if (this.builderProducer != null) {
+            this.builder = this.builderProducer.get(event);
+        }
+
         String cmd = syntax.getAsString("command");
         if (cmd != null){
             for (BaseCommand bc : event.getBetterCommand().getCommands())

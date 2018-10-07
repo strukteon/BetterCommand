@@ -15,6 +15,7 @@ import net.dv8tion.jda.core.Permission;
 
 import java.awt.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DefaultErrorHandler implements ErrorHandler {
 
@@ -22,9 +23,8 @@ public class DefaultErrorHandler implements ErrorHandler {
     public void missingBotPermissions(CommandEvent event, List<Permission> missingPermissions, BaseCommand command) {
         EmbedBuilder eb = createErrorEmbedBuilder()
                 .setTitle("Missing Permissions")
-                .setDescription("Whoops, it seems like " + event.getJDA().getSelfUser().getAsMention() + " is missing some permissions! Please permit them to use this command: ");
-        for (Permission p : missingPermissions)
-            eb.getDescriptionBuilder().append(eb.getDescriptionBuilder().length() > 0 ? ", " : "").append(p.getName());
+                .setDescription("Whoops, it seems like " + event.getJDA().getSelfUser().getAsMention() + " is missing some permissions! Please permit them to use this command: ")
+                .appendDescription(String.join(", ", missingPermissions.stream().map(p -> "``" + p.getName() + "``").collect(Collectors.toList())));
         event.getChannel().sendMessage(eb.build()).queue();
     }
 
@@ -32,10 +32,8 @@ public class DefaultErrorHandler implements ErrorHandler {
     public void missingUserPermissions(CommandEvent event, List<Permission> missingPermissions, BaseCommand command) {
         EmbedBuilder eb = createErrorEmbedBuilder()
                 .setTitle("Missing Permissions")
-                .setDescription("Whoops, it seems like you (" + event.getAuthor().getAsMention() + ") are missing some permissions! You need the following perms to execute this command: ");
-        for (Permission p : missingPermissions)
-            eb.getDescriptionBuilder().append(eb.getDescriptionBuilder().length() > 0 ? ", " : "").append(p.getName());
-        eb.appendDescription("``");
+                .setDescription("Whoops, it seems like you (" + event.getAuthor().getAsMention() + ") are missing some permissions! You need the following perms to execute this command: ")
+                .appendDescription(String.join(", ", missingPermissions.stream().map(p -> "``" + p.getName() + "``").collect(Collectors.toList())));
         event.getChannel().sendMessage(eb.build()).queue();
     }
 

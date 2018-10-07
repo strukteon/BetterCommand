@@ -7,12 +7,14 @@ package me.strukteon.bettercommand;
 
 import me.strukteon.bettercommand.command.BaseCommand;
 import me.strukteon.bettercommand.tools.BetterCommandException;
+import me.strukteon.bettercommand.tools.EmbedProducer;
 import me.strukteon.bettercommand.tools.ErrorHandler;
 import me.strukteon.bettercommand.tools.Loader;
 import me.strukteon.bettercommand.defaults.DefaultErrorHandler;
 import me.strukteon.bettercommand.defaults.DefaultHelpCommand;
 import me.strukteon.bettercommand.defaults.DefaultLoader;
 import net.dv8tion.jda.bot.sharding.ShardManager;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.JDA;
 
 import javax.annotation.Nonnull;
@@ -109,6 +111,32 @@ public class BetterCommand {
 
     public BetterCommand useDefaultHelpMessage(@Nonnull String label, @Nonnull Color color, @Nonnull String... aliases){
         unassignedCommands.add(new DefaultHelpCommand(label, color, aliases));
+        return this;
+    }
+
+
+    /**
+     * Enable the default help message
+     * @param label command label of the help message
+     * @param builder embedbuilder source
+     * @param aliases aliases of the help command
+     */
+
+    public BetterCommand useDefaultHelpMessage(@Nonnull String label, @Nonnull EmbedBuilder builder, @Nonnull String... aliases){
+        unassignedCommands.add(new DefaultHelpCommand(label, builder, aliases));
+        return this;
+    }
+
+
+    /**
+     * Enable the default help message
+     * @param label command label of the help message
+     * @param embedProducer embed producer for the message
+     * @param aliases aliases of the help command
+     */
+
+    public BetterCommand useDefaultHelpMessage(@Nonnull String label, @Nonnull EmbedProducer embedProducer, @Nonnull String... aliases){
+        unassignedCommands.add(new DefaultHelpCommand(label, embedProducer, aliases));
         return this;
     }
 
