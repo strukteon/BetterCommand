@@ -34,7 +34,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to int
      * @param name key
-     * @return integer
      */
 
     public int getAsInt(String name){
@@ -44,7 +43,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to long
      * @param name key
-     * @return long
      */
 
     public long getAsLong(String name){
@@ -54,7 +52,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link String}
      * @param name key
-     * @return {@link String}
      */
 
     public String getAsString(String name){
@@ -64,7 +61,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link User}
      * @param name key
-     * @return {@link User}
      */
 
     public User getAsUser(String name){
@@ -74,7 +70,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link Member}
      * @param name key
-     * @return {@link Member}
      */
 
     public Member getAsMember(String name){
@@ -84,7 +79,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link Guild}
      * @param name key
-     * @return {@link Guild}
      */
 
     public Guild getAsGuild(String name){
@@ -94,7 +88,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link TextChannel}
      * @param name key
-     * @return {@link TextChannel}
      */
 
     public TextChannel getAsTextChannel(String name){
@@ -104,7 +97,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link VoiceChannel}
      * @param name key
-     * @return {@link VoiceChannel}
      */
 
     public VoiceChannel getAsVoiceChannel(String name){
@@ -114,7 +106,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link Role}
      * @param name key
-     * @return {@link Role}
      */
 
     public Role getAsRole(String name){
@@ -122,9 +113,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<Integer>}
+     * Returns the object with the provided key casted to a Integer List
      * @param name key
-     * @return {@link List<Integer>}
      */
 
     public List<Integer> getAsListInt(String name){
@@ -132,9 +122,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<String>}
+     * Returns the object with the provided key casted to a String List
      * @param name key
-     * @return {@link List<String>}
      */
 
     public List<String> getAsListString(String name){
@@ -145,7 +134,6 @@ public class Syntax extends HashMap<String, Object> {
      * Returns the object with the provided key joined to a {@link String}
      * Note: this may throw an error when the object is no valid {@link List}!
      * @param name key
-     * @return {@link String}
      */
 
     public String getAsJoinedListString(String name){
@@ -153,9 +141,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<User>}
+     * Returns the object with the provided key casted to a User List
      * @param name key
-     * @return {@link List<User>}
      */
 
     public List<User> getAsListUser(String name){
@@ -163,9 +150,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<Member>}
+     * Returns the object with the provided key casted to a Member List
      * @param name key
-     * @return {@link List<Member>}
      */
 
     public List<Member> getAsListMember(String name){
@@ -173,9 +159,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<Guild>}
+     * Returns the object with the provided key casted to a Guild List
      * @param name key
-     * @return {@link List<Guild>}
      */
 
     public List<Guild> getAsListGuild(String name){
@@ -183,9 +168,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<TextChannel>}
+     * Returns the object with the provided key casted to a TextChannel List
      * @param name key
-     * @return {@link List<TextChannel>}
      */
 
     public List<TextChannel> getAsTextChannelList(String name){
@@ -193,9 +177,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<VoiceChannel>}
+     * Returns the object with the provided key casted to a VoiceChannel List
      * @param name key
-     * @return {@link List<VoiceChannel>}
      */
 
     public List<VoiceChannel> getAsVoiceChanneList(String name){
@@ -203,9 +186,8 @@ public class Syntax extends HashMap<String, Object> {
     }
 
     /**
-     * Returns the object with the provided key casted to {@link List<Role>}
+     * Returns the object with the provided key casted to a Role List
      * @param name key
-     * @return {@link List<Role>}
      */
 
     public List<Role> getAsRoleList(String name){
@@ -215,7 +197,6 @@ public class Syntax extends HashMap<String, Object> {
     /**
      * Returns the object with the provided key casted to {@link SubCommand}
      * @param name key
-     * @return {@link SubCommand}
      */
 
     public SubCommand getAsSubCommand(String name){
